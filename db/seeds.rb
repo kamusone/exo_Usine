@@ -6,10 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 5.times do
-Assembly.create(name: Faker::Name.first_name)
-end
-5.times do
-Part.create(part_number: Faker::Name.first_name)
-end
+  ass = Assembly.create(
+    name: Faker::Name.first_name
+  )
+  par = Part.create(part_number: Faker::Name.first_name)
 
-assemblies.parts << 
+ass.parts << par
+end 
